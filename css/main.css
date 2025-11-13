@@ -1,0 +1,72 @@
+@import url("font-awesome.min.css");
+/* @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic"); */
+/* @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro"); */
+:root { font-family: 'Inter', sans-serif; }
+@supports (font-variation-settings: normal) {
+   :root { font-family: 'Inter var', sans-serif; }
+}
+
+.graph {
+	padding: 0.5em 0 1em 0;
+}
+
+.container {
+	width: 80%;
+	max-width: 1000px!important;
+}
+
+.equation {
+	text-align: center;
+}
+
+.video-container {
+  width: 80%; /* 设置为页面宽度的80% */
+  aspect-ratio: 16 / 9; /* 强制宽高比为16:9，避免黑边 */
+  max-width: 1000px; /* 设置最大宽度为1000px */
+  height: auto; /* 自动调整高度，保持比例 */
+}
+  
+#tree {
+max-width: 80%;
+height: auto;
+text-align: center;
+}
+
+.subtitle {
+width: 80%;
+text-align: center;
+margin-top: 20px;
+}
+
+.gif-row {
+display: flex;
+justify-content: space-between; /* 保证图片间距相等 */
+flex-wrap: wrap; /* 确保在小屏幕上换行 */
+width: 100%; /* 宽度占满页面 */
+margin: 0 auto; /* 让容器居中 */
+}
+
+.gif {
+width: 20%; /* 每个图片占 23% 宽度，留出间隙 */
+height: auto; /* 保持GIF图片的比例 */
+}
+
+
+.video-row {
+    display: flex;
+    justify-content: space-between; /* 在视频之间留出间隙 */
+    width: 100%; /* 容器宽度为100% */
+    margin: 0 auto; /* 使视频容器居中 */
+}
+
+.video {
+width: 32%; /* 每个视频占32%的宽度，保证三者可以在一行内显示 */
+height: auto; /* 保持视频比例 */
+}
+  
+.video-section {
+  display: flex;
+  justify-content: center; /* 水平居中 */
+  align-items: center; /* 垂直居中 */
+  height: 70vh; /* 占据整个视口高度 */
+}
