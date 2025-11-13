@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MambaRain</title>
+    <!-- Bootstrap -->
+    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <link href="css/bootstrap-4.4.1.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <style>
+      body {
+        background: rgb(255, 255, 255) no-repeat fixed top left;
+        font-family: "Inter", 'Open Sans', sans-serif;
+      }
+    </style>
+
+  </head>
+
+
+    <!-- cover -->
+    <section>
+      <div class="jumbotron text-center mt-0">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col">
+              <h2 style="font-size:30px;">MambaRain: Multi-Scale Mamba-Attention Framework for 0-3 Hour Precipitation Nowcasting</h2>
+              <!-- <h4 style="color:rgb(54, 125, 189);"> arXiv 2025 </h4> -->
+              <hr>
+                Chunlei Shi</a><sup> 1</sup>&nbsp; &nbsp;
+                Hao Li</a><sup> 2</sup>&nbsp; &nbsp;
+                Ni Fan</a><sup> 3</sup>&nbsp; &nbsp;
+                Zengliang Zang</a><sup> 4</sup>&nbsp; &nbsp;
+                Hongbin Wang</a><sup>5 </sup>&nbsp; &nbsp;
+                Dan Niu</a><sup>1 †</sup>&nbsp; &nbsp;
+                <br>
+                <br>
+              <p>
+                <sup>1</sup> Southeast University, China &nbsp; &nbsp; <br>
+                <sup>2</sup> Nanjing XinDa Institute of Meteorological Science and Technology, China &nbsp; &nbsp; <br>
+                <sup>3</sup> Tongji University, China &nbsp; &nbsp; <br>
+                <sup>4</sup> PLA University of Science and Technology, China &nbsp; &nbsp; <br>
+                <sup>5</sup> Key Laboratory of Transportation Meteorology of China Meteorological Administration, China &nbsp; &nbsp; <br>
+              </p>
+              <p>
+                <sup>†</sup> corresponding author &nbsp;
+                <br>
+              </p>
+  
+              <!-- <div class="row justify-content-center">
+                <div class="column">
+                    <p class="mb-5">
+                      <a class="btn btn-large btn-light" href="https://arxiv.org/pdf/2503.07360" role="button" target="_blank">
+                      <i class="fa fa-file"></i> Paper </a>
+                    </p>
+                </div>
+                <div class="column">
+                  <p class="mb-5">
+                    <a class="btn btn-large btn-light" href="./index.html" role="button" target="_blank">
+                    <i class="fa fa-github-alt"></i> Code (Coming soon) </a>
+                  </p>
+                </div>
+                <div class="column">
+                  <p class="mb-5">
+                    <a class="btn btn-large btn-light" href="./index.html" role="button" target="_blank">
+                    <i class="fa fa-file"></i> Dataset (Coming soon) </a>
+                  </p>
+              </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  <!-- <br> -->
+
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h2><strong>Abstract</strong></h2>
+            <hr style="margin-top:0px">
+              <p class="text-justify" >
+                <!-- Language-guided robot dexterous generation enables robots to grasp and manipulate objects based on human commands. 
+                However, previous data-driven methods are hard to understand intention and execute grasping with unseen categories 
+                in the open set. In this work, we explore a new task, Open-set Language-guided Dexterous Grasp, 
+                and find that the main challenge is the huge gap between high-level human language semantics and low-level robot actions. 
+                To solve this problem, we propose an Affordance Dexterous Grasp (AffordDexGrasp) framework, 
+                with the insight of bridging the gap with a new generalizable-instructive affordance representation. 
+                This affordance can generalize to unseen categories by leveraging the object's local structure and category-agnostic semantic attributes, 
+                thereby effectively guiding dexterous grasp generation. 
+                Built upon the affordance, our framework introduces Affordacne Flow Matching (AFM) for affordance generation with language as input, 
+                and Grasp Flow Matching (GFM) for generating dexterous grasp with affordance as input. 
+                To evaluate our framework, we build an open-set table-top language-guided dexterous grasp dataset. 
+                Extensive experiments in the simulation and real worlds show that our framework surpasses all previous methods in open-set generalization. -->
+                Accurate precipitation nowcasting for extended horizons (0-3 hours) remains a critical challenge in meteorology, 
+                as existing methods typically focus on shorter periods (0-1 or 0-2 hours) and suffer from rapid performance degradation beyond 90 minutes when relying solely on radar observations. 
+                While generative models show promise, their slow inference speeds limit operational deployment. To address these limitations, we propose MambaRain, 
+                a novel multi-scale encoder-decoder framework that synergistically combines Mamba's long-range temporal memory capabilities with self-attention mechanisms for extended precipitation nowcasting. 
+                Our core contribution lies in designing a hybrid architecture where Mamba blocks capture global spatiotemporal dependencies across extended sequences, 
+                while self-attention mechanisms complement Mamba's sequential processing by capturing explicit spatial dependencies and enabling parallel global context aggregation. 
+                Furthermore, we propose a spectral loss to mitigate the averaging blur effect commonly observed in chaotic precipitation systems, 
+                thereby preserving the clarity of fine-scale motion patterns over the 0-3 hour horizon. 
+                Unlike previous approaches that struggle with balancing global context and local details or rely on computationally expensive generative models, 
+                our deterministic framework maintains efficiency while extending the effective forecasting window. 
+                Extensive experiments on the Xinjiang and Southeast China SWAN datasets demonstrate that MambaRain achieves superior performance in 0-3 hour precipitation nowcasting, 
+                significantly outperforming existing methods in both accuracy and computational efficiency.
+              </p>
+              <!-- <div class="row justify-content-center" style="align-items:center; display:flex;"></div>
+                <img src="images/task.png" alt="input" class="img-responsive graph" width="100%"/>
+              </div> -->
+            <br>
+        </div>
+      </div>
+    </div>
+  </section>
+<!--   <br> -->
+  <section class="video-section">
+    <video class="video-container" src="images/video_mambaRain.mp4" autoplay muted controls>
+      Your browser does not support the video tag.
+    </video>
+  </section>
+  <br>
+  <!-- <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h2><strong>DexGYSNet Construction</strong></h2>
+          <hr style="margin-top:0px">
+          <p class="text-justify">
+            The DexGYSNet dataset is constructed in a cost-effective manner by exploiting human grasp behavior and the extensive capabilities of Large Language Models (LLM).  
+            We develop the Hand-Object Interaction Retargeting (HOIR) strategy to transform human grasps into dexterous grasps with high quality and hand-object interaction consistency. 
+            Then, we implement an LLM-assisted Language Guidance Annotation system, which leverages the knowledge of Large Language Models (LLM) to produce flexible 
+            and fine-grained annotations for language guidance.
+          </p>
+          <div class="row justify-content-center" style="align-items:center; display:flex;">
+            <img src="images/construction.png" alt="input" class="img-responsive graph" width="100%"/>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <br> -->
+
+  <!-- <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h2><strong>DexGYSGrasp Framework</strong></h2>
+          <hr style="margin-top:0px">
+          <p class="text-justify">
+          The pipeline of Affordance Dexterous Grasp framework. 
+          The inference pipeline includes three stages: 1) intention pre-understanding assisted by MLLM; 
+          2) affordance flow matching for generating affordance base on MLLM ouput; 
+          3) Grasp Flow Matching and Optimization for outputing grasp poses based on the affordance and MLLM outputs. 
+          In the training time, AFM and GFM are independently trained one after another. 
+          Transformer and Perceiver are attention-based interaction module for velocity vector field prediction.
+          </p>
+          <div class="row justify-content-center" style="align-items:center; display:flex;">
+            <img src="images/methods.png" alt="input" class="img-responsive graph" width="100%"/>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <br> -->
+
+  <!-- <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h2><strong>Real World Experiment</strong></h2>
+          <hr style="margin-top:0px">
+          <div class="row">
+            <div class="col-md-6">
+              <img src="images/realword_setting.png" alt="Real World Experiment Setup" class="img-responsive" width="100%" />
+            </div>
+            <div class="col-md-6">
+              <h3>Experiment Setup</h3>
+              <p>
+                The real-word experiments are conducted to verify the simulation-to-reality ability of our framework. 
+                We employ a Leap Hand, a Kinova Gen3 6DOF arms and an original wrist RGB-D camera of Kinova arm. 
+                In experiment, we synthesize the scene point cloud by taking several partial depth maps around the object. 
+                Then the scene point cloud, a RGB image and the user language command are fed into our framework to obtain the dexterous grasp pose. 
+                During execution, we first move the the arm to a pre-grasp position, 
+                then synchronously move the joints of the robotic arm and the dexterous hand to reach the target pose. 
+              </p>
+            </div>
+            <h3>Experiment Visualization</h3>
+            <!-- <div class="row justify-content-center" style="align-items:center; display:flex;">
+              <img src="images/sim_vis.png" alt="input" class="img-responsive graph" width="100%"/>
+            </div> -->
+            <!-- <div class="row justify-content-center" style="align-items:center; display:flex;">
+              <img src="images/realword_vis.png" alt="input" class="img-responsive graph" width="100%"/>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> --> -->
+  <!-- Contact -->
+  <div class="container">
+    <div class="row ">
+      <div class="col-12">
+          <h2><strong>Contact</strong></h2>
+          <hr style="margin-top:0px">
+          <p>If you have any questions, please feel free to contact us:
+            <ul>
+              <li><b>Chunlei Shi</b>&colon; 230238514<span style="display:none">Prevent spamming</span>@<span style="display:none">Prevent spamming</span>seu.edu.cn </li>
+            </ul>
+          </p>
+      </div>
+    </div>
+  </div>
+  <footer class="text-center" style="margin-bottom:10px; font-size: medium;">
+      <hr>
+      Thanks to <a href="https://lioryariv.github.io/" target="_blank">Lior Yariv</a> for the <a href="https://lioryariv.github.io/idr/" target="_blank">website template</a>.
+  </footer>
+  <script>
+    MathJax = {
+      tex: {inlineMath: [['$', '$'], ['\\(', '\\)']],
+      macros: {
+        bm: ["{\\boldsymbol #1}",1],
+      }}
+    };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</body>
+</html>
