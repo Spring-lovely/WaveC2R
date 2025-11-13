@@ -68,7 +68,7 @@
                     <i class="fa fa-file"></i> Dataset (Coming soon) </a>
                   </p>
               </div>
-              
+
               </div>
             </div>
           </div>
@@ -97,18 +97,16 @@
                 and Grasp Flow Matching (GFM) for generating dexterous grasp with affordance as input. 
                 To evaluate our framework, we build an open-set table-top language-guided dexterous grasp dataset. 
                 Extensive experiments in the simulation and real worlds show that our framework surpasses all previous methods in open-set generalization. -->
-                Accurate precipitation nowcasting for extended horizons (0-3 hours) remains a critical challenge in meteorology, 
-                as existing methods typically focus on shorter periods (0-1 or 0-2 hours) and suffer from rapid performance degradation beyond 90 minutes when relying solely on radar observations. 
-                While generative models show promise, their slow inference speeds limit operational deployment. To address these limitations, we propose MambaRain, 
-                a novel multi-scale encoder-decoder framework that synergistically combines Mamba's long-range temporal memory capabilities with self-attention mechanisms for extended precipitation nowcasting. 
-                Our core contribution lies in designing a hybrid architecture where Mamba blocks capture global spatiotemporal dependencies across extended sequences, 
-                while self-attention mechanisms complement Mamba's sequential processing by capturing explicit spatial dependencies and enabling parallel global context aggregation. 
-                Furthermore, we propose a spectral loss to mitigate the averaging blur effect commonly observed in chaotic precipitation systems, 
-                thereby preserving the clarity of fine-scale motion patterns over the 0-3 hour horizon. 
-                Unlike previous approaches that struggle with balancing global context and local details or rely on computationally expensive generative models, 
-                our deterministic framework maintains efficiency while extending the effective forecasting window. 
-                Extensive experiments on the Xinjiang and Southeast China SWAN datasets demonstrate that MambaRain achieves superior performance in 0-3 hour precipitation nowcasting, 
-                significantly outperforming existing methods in both accuracy and computational efficiency.
+                Satellite-based radar retrieval methods are widely employed to fill coverage gaps in ground-based radar systems, 
+                especially in remote areas affected by terrain blockage and limited detection range. 
+                Existing methods predominantly rely on overly simplistic spatial-domain architectures constructed from a single data source, 
+                limiting their ability to accurately capture complex precipitation patterns and sharply defined meteorological boundaries.
+                To address these limitations, we propose WaveC2R, a novel wavelet-driven coarse-to-refined framework for radar retrieval. 
+                WaveC2R integrates complementary multi-source data and leverages frequency-domain decomposition to separately model low-frequency components for capturing precipitation patterns and high-frequency components for delineating sharply defined meteorological boundaries. 
+                Specifically, WaveC2R consists of two stages (i) \textit{Intensity-Boundary Decoupled Learning}, 
+                which leverages wavelet decomposition and frequency-specific loss functions to separately optimize low-frequency intensity and high-frequency boundaries; 
+                and (ii) \textit{Detail-Enhanced Diffusion Refinement}, which employs frequency-aware conditional priors and multi-source data to progressively enhance fine-scale precipitation structures while preserving coarse-scale meteorological consistency.
+                Experimental results on the publicly available SEVIR dataset demonstrate that WaveC2R achieves state-of-the-art performance in satellite-based radar retrieval, particularly excelling at preserving high-intensity precipitation features and sharply defined meteorological boundaries. Our project is available at https://spring-lovely.github.io/WaveC2R/.
               </p>
               <!-- <div class="row justify-content-center" style="align-items:center; display:flex;"></div>
                 <img src="images/task.png" alt="input" class="img-responsive graph" width="100%"/>
