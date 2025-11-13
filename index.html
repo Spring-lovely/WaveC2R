@@ -30,19 +30,19 @@
               <!-- <h4 style="color:rgb(54, 125, 189);"> arXiv 2025 </h4> -->
               <hr>
                 Chunlei Shi</a><sup> 1</sup>&nbsp; &nbsp;
-                Hao Li</a><sup> 2</sup>&nbsp; &nbsp;
-                Ni Fan</a><sup> 3</sup>&nbsp; &nbsp;
-                Zengliang Zang</a><sup> 4</sup>&nbsp; &nbsp;
-                Hongbin Wang</a><sup>5 </sup>&nbsp; &nbsp;
+                Han Xu</a><sup> 1</sup>&nbsp; &nbsp;
+                Yinghao Li</a><sup> 2</sup>&nbsp; &nbsp;
+                Yi-Lin Wei</a><sup> 2</sup>&nbsp; &nbsp;
+                Yongchao Feng</a><sup>3 </sup>&nbsp; &nbsp;
+                Yecheng Zhang</a><sup>4 </sup>&nbsp; &nbsp;
                 Dan Niu</a><sup>1 †</sup>&nbsp; &nbsp;
                 <br>
                 <br>
               <p>
-                <sup>1</sup> Southeast University, China &nbsp; &nbsp; <br>
-                <sup>2</sup> Nanjing XinDa Institute of Meteorological Science and Technology, China &nbsp; &nbsp; <br>
-                <sup>3</sup> Tongji University, China &nbsp; &nbsp; <br>
-                <sup>4</sup> PLA University of Science and Technology, China &nbsp; &nbsp; <br>
-                <sup>5</sup> Key Laboratory of Transportation Meteorology of China Meteorological Administration, China &nbsp; &nbsp; <br>
+                <sup>1</sup> School of Automation, Southeast University &nbsp; &nbsp; <br>
+                <sup>2</sup> School of Computer Science and Engineering, Sun Yat-sen University &nbsp; &nbsp; <br>
+                <sup>3</sup> School of Computer Science and Engineering, Beihang University &nbsp; &nbsp; <br>
+                <sup>4</sup> School of Architecture, Tsinghua University &nbsp; &nbsp; <br>
               </p>
               <p>
                 <sup>†</sup> corresponding author &nbsp;
@@ -103,9 +103,9 @@
                 limiting their ability to accurately capture complex precipitation patterns and sharply defined meteorological boundaries.
                 To address these limitations, we propose WaveC2R, a novel wavelet-driven coarse-to-refined framework for radar retrieval. 
                 WaveC2R integrates complementary multi-source data and leverages frequency-domain decomposition to separately model low-frequency components for capturing precipitation patterns and high-frequency components for delineating sharply defined meteorological boundaries. 
-                Specifically, WaveC2R consists of two stages (i) \textit{Intensity-Boundary Decoupled Learning}, 
+                Specifically, WaveC2R consists of two stages (i) Intensity-Boundary Decoupled Learning, 
                 which leverages wavelet decomposition and frequency-specific loss functions to separately optimize low-frequency intensity and high-frequency boundaries; 
-                and (ii) \textit{Detail-Enhanced Diffusion Refinement}, which employs frequency-aware conditional priors and multi-source data to progressively enhance fine-scale precipitation structures while preserving coarse-scale meteorological consistency.
+                and (ii) Detail-Enhanced Diffusion Refinement, which employs frequency-aware conditional priors and multi-source data to progressively enhance fine-scale precipitation structures while preserving coarse-scale meteorological consistency.
                 Experimental results on the publicly available SEVIR dataset demonstrate that WaveC2R achieves state-of-the-art performance in satellite-based radar retrieval, particularly excelling at preserving high-intensity precipitation features and sharply defined meteorological boundaries. Our project is available at https://spring-lovely.github.io/WaveC2R/.
               </p>
               <!-- <div class="row justify-content-center" style="align-items:center; display:flex;"></div>
@@ -117,13 +117,13 @@
     </div>
   </section>
 
-<!--   <br> -->
+  <!-- <br>
   <section class="video-section">
     <video class="video-container" src="images/video_mambaRain.mp4" autoplay muted controls>
       Your browser does not support the video tag.
     </video>
   </section>
-  <br>
+  <br> -->
 
   <!-- <section>
     <div class="container">
@@ -153,15 +153,43 @@
           <h2><strong>WaveC2R Framework</strong></h2>
           <hr style="margin-top:0px">
           <p class="text-justify">
-          The pipeline of Affordance Dexterous Grasp framework. 
+          <!-- The pipeline of Affordance Dexterous Grasp framework. 
           The inference pipeline includes three stages: 1) intention pre-understanding assisted by MLLM; 
           2) affordance flow matching for generating affordance base on MLLM ouput; 
           3) Grasp Flow Matching and Optimization for outputing grasp poses based on the affordance and MLLM outputs. 
           In the training time, AFM and GFM are independently trained one after another. 
-          Transformer and Perceiver are attention-based interaction module for velocity vector field prediction.
+          Transformer and Perceiver are attention-based interaction module for velocity vector field prediction. -->
+          Overall architecture of the proposed WaveC2R framework. 
+          (a) Stage I: Intensity-Boundary Decoupled Learning employs the Wavelet-Temporal-Frequency (WTF) module 
+          to extract hierarchical frequency-domain features from multi-source satellite observations and generates coarse radar 
+          estimates through frequency-decomposed optimization. (b) Stage II: Detail-Enhanced Diffusion Refinement progressively 
+          refines coarse estimates via conditional diffusion with physics-aware frequency-decomposed priors. 
+          (c) WTF Block demonstrates the core wavelet-based attention mechanism that performs temporal-frequency feature fusion 
+          across multiple scales.
           </p>
           <div class="row justify-content-center" style="align-items:center; display:flex;">
             <img src="images/WaveC2R_ov.jpg" alt="input" class="img-responsive graph" width="100%"/>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <br>
+
+
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h2><strong>Experiment</strong></h2>
+          <hr style="margin-top:0px">
+          <p class="text-justify">
+          Qualitative comparison of radar reflectivity predictions for four heavy precipitation events from the SEVIR dataset. 
+          Red boxes highlight magnified convective regions where our WaveC2R demonstrates superior intensity accuracy and boundary sharpness 
+          compared to competing methods. Input modalities include visible, dual-channel infrared, and lightning observations.
+          </p>
+          <div class="row justify-content-center" style="align-items:center; display:flex;">
+            <img src="images/fig_vis1.jpg" alt="input" class="img-responsive graph" width="100%"/>
           </div>
         </div>
       </div>
